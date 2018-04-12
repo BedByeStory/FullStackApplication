@@ -1,0 +1,20 @@
+{
+  "name": "sprocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "redis": "redis-server",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "test": "cd server && npm run test",
+    "dev": "concurrently --kill-others-on-fail \"npm run redis\" \"npm run test\" \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
+}

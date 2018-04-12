@@ -1,0 +1,36 @@
+{
+  "name": "sprocket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "jest ./ --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "connect-redis": "^3.3.3",
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "express-force-ssl": "^0.3.2",
+    "express-session": "^1.15.6",
+    "express-socket.io-session": "^1.3.3",
+    "grant-express": "^3.8.2",
+    "http-proxy-middleware": "^0.17.4",
+    "jsonwebtoken": "^8.2.0",
+    "lodash": "^4.17.5",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "redis": "^2.8.0",
+    "shortid": "^2.2.8",
+    "socket.io": "^2.0.4"
+  }
+}

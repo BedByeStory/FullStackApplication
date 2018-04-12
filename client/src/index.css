@@ -1,0 +1,36 @@
+/* html,
+body {
+  position: fixed;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+} */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #eee;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+#loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  background-image: url('./loader.svg');
+  background-size: contain;
+  background-position: center;
+}

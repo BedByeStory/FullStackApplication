@@ -1,0 +1,50 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://bedbyestory.com",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "js-cookie": "^2.2.0",
+    "material-ui": "next",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "mobile-detect": "^1.4.1",
+    "prevent-overscroll": "^0.1.0",
+    "react": "^16.2.0",
+    "react-chat-window": "^1.0.8",
+    "react-dom": "^16.2.0",
+    "react-error-boundary": "^1.2.1",
+    "react-form-controls": "^1.0.11",
+    "react-loader": "^2.4.3",
+    "react-modal": "^3.3.1",
+    "react-pdf": "^3.0.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-toastify": "^3.4.0",
+    "react-user-avatar": "^1.10.0",
+    "redux": "^3.7.2",
+    "redux-cookie": "^0.5.9",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.9.1",
+    "redux-rtc": "^2.0.0-alpha.5",
+    "rodal": "^1.6.3",
+    "socket.io-client": "^2.0.4"
+  },
+  "devDependencies": {
+    "react-scripts": "1.1.1",
+    "webpack-dashboard": "^1.1.1"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:cordova": "REACT_APP_CORDOVA=true PUBLIC_URL=./ react-scripts build && cp -a ./build/. ../../../rpjs/BedByeStoryApp/www/",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && aws s3 sync build s3://bedbyestory.com && npm run no-cache:worker && npm run no-cache:index",
+    "no-cache:worker": "aws s3 cp s3://bedbyestory.com/service-worker.js s3://bedbyestory.com/service-worker.js --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/javascript --acl public-read",
+    "no-cache:index": "aws s3 cp s3://bedbyestory.com/index.html s3://bedbyestory.com/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html --acl public-read",
+    "invalidate:worker": "aws cloudfront create-invalidation --distribution-id E191CCHY3J91KX --paths /service-worker.js",
+    "invalidate:index": "aws cloudfront create-invalidation --distribution-id E191CCHY3J91KX --paths /index.html"
+  }
+}

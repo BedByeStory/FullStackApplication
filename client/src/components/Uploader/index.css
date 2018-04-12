@@ -1,0 +1,44 @@
+.box {
+  text-align: center;
+}
+.box.advanced .dragndrop {
+  display: inline;
+}
+.icon {
+  height: 80px;
+  width: 80px;
+  object-fit: cover;
+  border-radius: 40px;
+  display: block;
+  margin: auto;
+}
+.box .file {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.box .file + label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+.box .file:focus + label,
+.box .file + label:hover strong{
+  /* color:#39bfd3; */
+}
+.box .file + label * {
+	pointer-events: none;
+}
+.box .dragndrop,
+.box .uploading {
+  display: none;
+}
+.box.isUploading .input {
+  visibility: hidden;
+}
+.box.isUploading .uploading {
+  display: block;
+}

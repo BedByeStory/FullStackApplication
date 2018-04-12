@@ -1,0 +1,6 @@
+export { default as friendsEpic } from './friends'
+export { default as profileEpic } from './profile'
+export { default as messagesEpic } from './messages'
+export { default as alertsEpic } from './alerts'
+export { default as pingEpic } from './ping'
+export { default as callEpic } from './call'
